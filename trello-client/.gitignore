@@ -80,9 +80,10 @@ dist
 # IDE / Editor
 .idea
 .editorconfig
-
+.vscode
 # Service worker
 sw.*
 
 # Mac OSX
 .DS_Store
+
