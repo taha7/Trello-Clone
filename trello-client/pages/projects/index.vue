@@ -2,14 +2,14 @@
    <div>
       <Navbar />
       <section class="content-wrapper">
-         <div class="content-header">Hello Taha from home page</div>
+         <div class="content-header">Hello Taha from projects page</div>
          <div class="content-body">Projects</div>
       </section>
    </div>
 </template>
 
 <script>
-import Navbar from "../layouts/partials/navbar";
+import Navbar from "../../layouts/partials/navbar";
 export default {
    components: {
       Navbar
