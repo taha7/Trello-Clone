@@ -9,12 +9,8 @@
 </template>
 
 <script>
-// import Navbar from "../layouts/partials/navbar";
 export default {
-   layout: "master-container",
-   components: {
-      // Navbar
-   }
+   layout: "master-container"
 };
 </script>
 

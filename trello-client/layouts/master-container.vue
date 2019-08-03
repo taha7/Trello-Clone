@@ -1,9 +1,18 @@
 <template>
    <div>
-      master container
+      <Navbar/>
       <nuxt />
    </div>
 </template>
+
+<script>
+import Navbar from "~/layouts/partials/navbar";
+export default {
+   components: {
+      Navbar
+   }
+}
+</script>
 
 <style>
 html {
