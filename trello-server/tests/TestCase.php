@@ -38,4 +38,9 @@ abstract class TestCase extends BaseTestCase
         $this->actingAs($user);
         return $this;
     }
+
+    protected function apiPath($endpoint)
+    {
+        return "/api/{$endpoint}";
+    }
 }
