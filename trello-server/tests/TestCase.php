@@ -39,8 +39,8 @@ abstract class TestCase extends BaseTestCase
         return $this;
     }
 
-    protected function apiPath($endpoint)
+    protected function apiAuthPath($endpoint, $token)
     {
-        return "/api/{$endpoint}";
+        return "/api/{$endpoint}?api_token={$token}";
     }
 }

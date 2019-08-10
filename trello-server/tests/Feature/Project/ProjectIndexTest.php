@@ -20,7 +20,7 @@ class ProjectIndexTest extends TestCase
 
         $notUserProject = create(Project::class);
 
-        $response = $this->get($this->apiPath('projects') . "?api_token={$user->api_token}");
+        $response = $this->get($this->apiAuthPath('projects', $user->api_token));
 
         $response
             ->assertJsonFragment([
