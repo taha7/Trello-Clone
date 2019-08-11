@@ -19,7 +19,33 @@
 
 <script>
 export default {
-   layout: "master-container"
+   layout: "master-container",
+
+   data() {
+      return {
+         projects: []
+      };
+   },
+
+   async asyncData({ params, app }) {
+      try {
+         let response = await app.$axios.$get(
+            `projects?api_token=0Q3NnBVF076Gbj1HISi04qtwy6qdZ1ZYOaXgxIxLtVcwx59aUbVNozQmSDKP`,
+            {
+               headers: {
+                  Accept: "application/json",
+                  "Content-Type": "application/json"
+               }
+            }
+         );
+
+         return {
+            projects: response.data
+         };
+      } catch (e) {
+         console.log(e);
+      }
+   }
 };
 </script>
 
