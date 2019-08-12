@@ -1,5 +1,5 @@
 <?php
-function makeResponse($data = null, $message = '', $code = 200, $validation = [], $headers = [], $error = null)
+function makeResponse($data = null, $message = '', $code = 200, $validation = null, $headers = [], $error = null)
 {
    return response()->json([
       'status' => in_array($code, successStatus()) ? true : false,
