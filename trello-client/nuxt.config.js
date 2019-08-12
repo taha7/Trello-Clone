@@ -40,7 +40,8 @@ export default {
 	modules: [
 		// Doc: https://bootstrap-vue.js.org/docs/
 		'bootstrap-vue/nuxt',
-		'@nuxtjs/axios'
+		'@nuxtjs/axios',
+		'@nuxtjs/auth'
 	],
 
 	/** 
@@ -48,6 +49,25 @@ export default {
 	*/
 	axios: {
 		baseURL: 'http://127.0.0.1:8000/api'
+	},
+
+	auth: {
+		endpoints: {
+			login: {
+				url: 'login',
+				method: 'post',
+				propertyName: 'access_token'
+			},
+			user: {
+				url: 'me',
+				method: 'post',
+				propertyName: 'data'
+			},
+			logout: {
+				url: 'logout',
+				method: 'post'
+			}
+		}
 	},
 
 	/*
