@@ -10,9 +10,14 @@ class ProjectsController extends Controller
     public function index()
     {
         return makeResponse(
-            ProjectsResource::collection(
-                auth()->user()->projects()->with('group:id,title')->get()
-            )
+            // ProjectsResource::collection(
+            auth()->user()->projects()
+                ->with('group:id,title')
+                ->get()
+                ->groupBy(function ($project) {
+                    return $project->group->title;
+                })
+            // )
         );
     }
 }
