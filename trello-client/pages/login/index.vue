@@ -1,6 +1,6 @@
 <template>
    <div>
-      <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+      <b-form @submit.prevent="onSubmit" @reset="onReset" v-if="show">
          <b-form-group
             id="input-group-1"
             label="Email address:"
@@ -38,15 +38,18 @@ export default {
       return {
          form: {
             email: "",
-            name: ""
+            password: ""
          },
          show: true
       };
    },
    methods: {
-      onSubmit(evt) {
-         evt.preventDefault();
-         alert(JSON.stringify(this.form));
+      async onSubmit(evt) {
+         let response = await this.$auth.loginWith("local", {
+            data: this.form
+         });
+
+         this.$router.push("/dashboard/home");
       },
       onReset(evt) {
          evt.preventDefault();

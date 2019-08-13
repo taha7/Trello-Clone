@@ -52,20 +52,24 @@ export default {
 	},
 
 	auth: {
-		endpoints: {
-			login: {
-				url: 'login',
-				method: 'post',
-				propertyName: 'access_token'
-			},
-			user: {
-				url: 'me',
-				method: 'post',
-				propertyName: 'data'
-			},
-			logout: {
-				url: 'logout',
-				method: 'post'
+		strategies: {
+			local: {
+				endpoints: {
+					login: {
+						url: 'login',
+						method: 'post',
+						propertyName: 'access_token'
+					},
+					user: {
+						url: 'me',
+						method: 'post',
+						propertyName: false
+					},
+					logout: {
+						url: 'logout',
+						method: 'post'
+					}
+				}
 			}
 		}
 	},
